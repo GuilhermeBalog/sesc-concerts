@@ -1,0 +1,233 @@
+[
+  {
+    "title": "Grande São Paulo",
+    "value": "capital",
+    "key": "capital",
+    "children": [
+      {
+        "title": "14 Bis",
+        "value": "14 Bis",
+        "key": "14 Bis"
+      },
+      {
+        "title": "24 de Maio",
+        "value": "24 de Maio",
+        "key": "24 de Maio"
+      },
+      {
+        "title": "Avenida Paulista",
+        "value": "Avenida Paulista",
+        "key": "Avenida Paulista"
+      },
+      {
+        "title": "Belenzinho",
+        "value": "Belenzinho",
+        "key": "Belenzinho"
+      },
+      {
+        "title": "Bom Retiro",
+        "value": "Bom Retiro",
+        "key": "Bom Retiro"
+      },
+      {
+        "title": "Campo Limpo",
+        "value": "Campo Limpo",
+        "key": "Campo Limpo"
+      },
+      {
+        "title": "Carmo",
+        "value": "Carmo",
+        "key": "Carmo"
+      },
+      {
+        "title": "Casa Verde",
+        "value": "Casa Verde",
+        "key": "Casa Verde"
+      },
+      {
+        "title": "Centro de Pesquisa e Formação",
+        "value": "Centro de Pesquisa e Formação",
+        "key": "Centro de Pesquisa e Formação"
+      },
+      {
+        "title": "CineSesc",
+        "value": "CineSesc",
+        "key": "CineSesc"
+      },
+      {
+        "title": "Consolação",
+        "value": "Consolação",
+        "key": "Consolação"
+      },
+      {
+        "title": "Florêncio de Abreu",
+        "value": "Florêncio de Abreu",
+        "key": "Florêncio de Abreu"
+      },
+      {
+        "title": "Guarulhos",
+        "value": "Guarulhos",
+        "key": "Guarulhos"
+      },
+      {
+        "title": "Interlagos",
+        "value": "Interlagos",
+        "key": "Interlagos"
+      },
+      {
+        "title": "Ipiranga",
+        "value": "Ipiranga",
+        "key": "Ipiranga"
+      },
+      {
+        "title": "Itaquera",
+        "value": "Itaquera",
+        "key": "Itaquera"
+      },
+      {
+        "title": "Mogi das Cruzes",
+        "value": "Mogi das Cruzes",
+        "key": "Mogi das Cruzes"
+      },
+      {
+        "title": "Osasco",
+        "value": "Osasco",
+        "key": "Osasco"
+      },
+      {
+        "title": "Pinheiros",
+        "value": "Pinheiros",
+        "key": "Pinheiros"
+      },
+      {
+        "title": "Pompeia",
+        "value": "Pompeia",
+        "key": "Pompeia"
+      },
+      {
+        "title": "Santana",
+        "value": "Santana",
+        "key": "Santana"
+      },
+      {
+        "title": "Santo Amaro",
+        "value": "Santo Amaro",
+        "key": "Santo Amaro"
+      },
+      {
+        "title": "Santo André",
+        "value": "Santo André",
+        "key": "Santo André"
+      },
+      {
+        "title": "São Caetano ",
+        "value": "São Caetano ",
+        "key": "São Caetano "
+      },
+      {
+        "title": "Vila Mariana",
+        "value": "Vila Mariana",
+        "key": "Vila Mariana"
+      }
+    ]
+  },
+  {
+    "title": "Interior",
+    "value": "interior",
+    "key": "interior",
+    "children": [
+      {
+        "title": "Araraquara",
+        "value": "Araraquara",
+        "key": "Araraquara"
+      },
+      {
+        "title": "Bauru",
+        "value": "Bauru",
+        "key": "Bauru"
+      },
+      {
+        "title": "Campinas",
+        "value": "Campinas",
+        "key": "Campinas"
+      },
+      {
+        "title": "Catanduva",
+        "value": "Catanduva",
+        "key": "Catanduva"
+      },
+      {
+        "title": "Jundiaí",
+        "value": "Jundiaí",
+        "key": "Jundiaí"
+      },
+      {
+        "title": "Piracicaba",
+        "value": "Piracicaba",
+        "key": "Piracicaba"
+      },
+      {
+        "title": "Presidente Prudente",
+        "value": "Presidente Prudente",
+        "key": "Presidente Prudente"
+      },
+      {
+        "title": "Registro",
+        "value": "Registro",
+        "key": "Registro"
+      },
+      {
+        "title": "Ribeirão Preto",
+        "value": "Ribeirão Preto",
+        "key": "Ribeirão Preto"
+      },
+      {
+        "title": "Rio Preto",
+        "value": "Rio Preto",
+        "key": "Rio Preto"
+      },
+      {
+        "title": "São Carlos",
+        "value": "São Carlos",
+        "key": "São Carlos"
+      },
+      {
+        "title": "São José dos Campos",
+        "value": "São José dos Campos",
+        "key": "São José dos Campos"
+      },
+      {
+        "title": "Sorocaba",
+        "value": "Sorocaba",
+        "key": "Sorocaba"
+      },
+      {
+        "title": "Taubaté",
+        "value": "Taubaté",
+        "key": "Taubaté"
+      }
+    ]
+  },
+  {
+    "title": "Litoral",
+    "value": "litoral",
+    "key": "litoral",
+    "children": [
+      {
+        "title": "Bertioga",
+        "value": "Bertioga",
+        "key": "Bertioga"
+      },
+      {
+        "title": "Birigui",
+        "value": "Birigui",
+        "key": "Birigui"
+      },
+      {
+        "title": "Santos",
+        "value": "Santos",
+        "key": "Santos"
+      }
+    ]
+  }
+]
