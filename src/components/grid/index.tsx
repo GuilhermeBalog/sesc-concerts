@@ -2,11 +2,20 @@
 import React from 'react'
 
 import styles from './style.module.scss';
-import { MusicActivity } from '@/contexts/activities';
-import { CalendarOutlined, EnvironmentOutlined } from '@ant-design/icons';
+import { MusicActivity } from '@/services/activities';
+import { BarcodeOutlined, CalendarOutlined, DollarOutlined, EnvironmentOutlined } from '@ant-design/icons';
+import { AntdIconProps } from '@ant-design/icons/lib/components/AntdIcon';
 
 interface GridProps {
   items: MusicActivity[]
+}
+
+type AntIcon = React.ForwardRefExoticComponent<Omit<AntdIconProps, 'ref'> & React.RefAttributes<HTMLSpanElement>>
+
+interface MusicActivityDetail {
+  Icon: AntIcon,
+  text: string
+  key: string,
 }
 
 const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
@@ -18,6 +27,40 @@ const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
   minute: "2-digit",
 });
 
+function getDetails(item: MusicActivity): MusicActivityDetail[] {
+  const details: MusicActivityDetail[] = [
+    { key: "local", Icon: EnvironmentOutlined, text: item.places.filter(s => s?.trim()).join(`, `) },
+    ...item.dates.map(date => ({ key: `date-${date}`, Icon: CalendarOutlined, text: dateFormatter.format(new Date(date)) })),
+    getTicketsDetail(item),
+  ];
+
+  return details;
+}
+
+function getTicketsDetail(item: MusicActivity): MusicActivityDetail {
+  const key = "tickets-info"
+  if(item.tickets === null) {
+    return {
+      key,
+      Icon: DollarOutlined,
+      text: `Gratuito`,
+    }
+  }
+
+  if(item.tickets <= 0) {
+    return {
+      key,
+      Icon: BarcodeOutlined,
+      text: `Esgotado`
+    }
+  }
+
+  return {
+    key,
+    Icon: BarcodeOutlined,
+    text: `${item.tickets} ingressos`,
+  }
+}
 
 export function Grid({ items }: GridProps) {
   return (
@@ -46,12 +89,11 @@ export function Grid({ items }: GridProps) {
             </a>
 
             <ul className={styles.card__details}>
-                <li className={styles.card__detail}>
-                  <EnvironmentOutlined /> {item.places}
+              {getDetails(item).map((detail) => (
+                <li key={detail.key} className={styles.card__detail}>
+                  <detail.Icon /> {detail.text}
                 </li>
-                <li className={styles.card__detail}>
-                  <CalendarOutlined /> {dateFormatter.format(item.date)}
-                </li>
+              ))}
             </ul>
           </div>
         </li>

@@ -1,4 +1,5 @@
-import { FilterOptions, MusicActivity } from "@/contexts/activities";
+import { FilterOptions } from "@/contexts/activities";
+import { MusicActivity } from "@/services/activities";
 
 export function filterActivities(activities: MusicActivity[], { places, categories }: FilterOptions): MusicActivity[] {
   return activities.filter(activity => (

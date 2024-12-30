@@ -1,17 +1,6 @@
 import React, { ReactNode, createContext, useCallback, useContext, useEffect, useState } from "react";
 
-import { Activity, Sesc } from "@/services/sesc";
-
-export interface MusicActivity {
-  id: number,
-  image: string,
-  link: string,
-  title: string,
-  subtitle: string
-  places: (string | null)[],
-  date: Date,
-  categories: string[]
-}
+import { MusicActivity } from "@/services/activities";
 
 export interface FilterOptions {
   categories?: string[],
@@ -30,19 +19,6 @@ interface ContextData {
   loading: boolean,
 }
 
-function formatActivities(activities: Activity[]): MusicActivity[] {
-  return activities.map(activity => ({
-    id: activity.id,
-    image: activity.imagem,
-    link: `${Sesc.DOMAIN}${activity.link}`,
-    title: activity.titulo,
-    subtitle: activity.complemento,
-    places: activity.unidade.map(unit => unit.name),
-    date: new Date(activity.dataProxSessao),
-    categories: activity.categorias.map(category => category.titulo),
-  }))
-}
-
 const ActivitiesContext = createContext<ContextData>({} as ContextData)
 
 export function ActivitiesProvider({ children }: { children: ReactNode }) {
@@ -55,12 +31,15 @@ export function ActivitiesProvider({ children }: { children: ReactNode }) {
   const update = useCallback(() => {
     setLoading(true);
 
-    const sesc = new Sesc();
-    sesc.getAllActivities().then(data => {
-      setActivities(formatActivities(data.atividade))
-      setUpdatedAt(new Date());
-      setLoading(false);
-    })
+    fetch('/api/activities')
+      .then(res => res.json() as Promise<MusicActivity[]>)
+      .then(response => {
+        setActivities(response);
+        setUpdatedAt(new Date());
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, [])
 
   useEffect(() => {
